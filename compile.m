@@ -12,9 +12,9 @@ cd(current_folder);
 
 if ispc     % Windows machine
     % set opencv include path
-    opencv_include = 'E:\development\opencv-2.4.12\opencv\build\include\';
+    opencv_include = 'I:\opencv\OpenCV2.4.6\build\include\';
     % set opencv lib path
-    opencv_libpath = 'E:\development\opencv-2.4.12\opencv\build\x64\vc11\lib\';
+    opencv_libpath = 'I:\opencv\OpenCV2.4.6\build\x64\vc11\lib\';
 
     files = dir([opencv_libpath '*opencv*.lib']);
     lib = [];

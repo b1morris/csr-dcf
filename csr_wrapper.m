@@ -6,13 +6,18 @@ function csr_wrapper(varargin)
     %
     % Input:
     % - varargin[OutputDir] (string): path to dir where some output images/data should be stored
-
+   
     cleanup = onCleanup(@() exit() ); % Always call exit command at the end to terminate Matlab!
+    
     RandStream.setGlobalStream(RandStream('mt19937ar', 'Seed', sum(clock))); % Set random seed to a different value every time as required by the VOT rules.
     
+    %setup paths
+    csr_initialize()
+    
     [handle, image_path, region] = vot('polygon'); % Obtain communication object
+    
     image = imread(image_path); % Read first image from file
-
+    
     % matlab indexing: starts with (1,1); gt starts with (0,0)
     if numel(region) > 4
         % all x,y points shifted by 1

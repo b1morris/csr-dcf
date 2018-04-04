@@ -1,7 +1,7 @@
 function demo_csr()
 
 % set this to tracker directory
-tracker_path = 'E:\workspace\tracking\CSRDCF';
+tracker_path = 'I:\git\vot-toolkit\tracker\examples\csr-dcf';
 % add paths
 addpath(tracker_path);
 addpath(fullfile(tracker_path, 'mex'));
@@ -15,7 +15,9 @@ use_reinitialization = true;
 sequence_name = 'ball1';    
 
 % path to the folder with VOT sequences
-base_path = 'E:\datasets\vot2016';
+%base_path = 'E:\datasets\vot2016';
+base_path = 'I:\git\vot-workspace-vot2017\sequences';
+
 base_path = fullfile(base_path, sequence_name);
 img_dir = dir(fullfile(base_path, '*.jpg'));
 
